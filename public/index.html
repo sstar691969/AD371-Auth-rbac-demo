@@ -1,0 +1,62 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication and Role-Based Access Control</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <main class="container">
+        <header>
+            <h1>Authentication Demo</h1>
+            <p>Registration, login, and role-based access control</p>
+        </header>
+
+        <section class="panel" id="auth-panel">
+            <h2>Create an Account</h2>
+            <form id="register-form">
+                <label for="register-email">Email</label>
+                <input type="email" id="register-email" required>
+
+                <label for="register-password">Password (at least 8 characters)</label>
+                <input type="password" id="register-password" minlength="8" required>
+
+                <button type="submit">Register</button>
+            </form>
+
+            <hr>
+
+            <h2>Login</h2>
+            <form id="login-form">
+                <label for="login-email">Email</label>
+                <input type="email" id="login-email" required>
+
+                <label for="login-password">Password</label>
+                <input type="password" id="login-password" required>
+
+                <button type="submit">Login</button>
+            </form>
+        </section>
+
+        <section class="panel hidden" id="account-panel">
+            <h2>Account Information</h2>
+            <p id="account-email"></p>
+            <p id="account-role"></p>
+            <button id="logout-button" class="secondary">Log Out</button>
+        </section>
+
+        <section class="panel hidden" id="admin-panel">
+            <h2>Admin Dashboard</h2>
+            <p>Only authenticated Admin users can view this information.</p>
+            <button id="load-users-button">Load User List</button>
+            <pre id="user-list"></pre>
+        </section>
+
+        <div id="message" class="message" role="status" aria-live="polite"></div>
+    </main>
+</body>
+</html>
